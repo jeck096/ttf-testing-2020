@@ -35,14 +35,24 @@ namespace ParityUnitTest
         //    bool isEven = ParityService.IsEven(3);
         //    Assert.That(isEven, Is.True);
         //}
+
+        //[Test]
+        //public void IsEven_ShouldReturnFalse_WhenNumerIsTwo()
+        //{
+        //    bool isEven = ParityService.IsEven(2);
+        //    Assert.That(isEven, Is.False);
+        //}
         #endregion
 
-        [Test]
-        public void IsEven_ShouldReturnFalse_WhenNumerIsTwo()
+        [TestCase(2)]
+        [TestCase(4)]
+        public void IsEven_ShouldReturnFalse_WhenNumerIsPair(int number)
         {
-            bool isEven = ParityService.IsEven(2);
+            bool isEven = ParityService.IsEven(number);
             Assert.That(isEven, Is.False);
         }
+
+
 
 
     }
