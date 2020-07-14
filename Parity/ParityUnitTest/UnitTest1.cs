@@ -12,6 +12,9 @@ namespace ParityUnitTest
 
         [TestCase(1)]
         [TestCase(3)]
+        [TestCase(5)]
+        [TestCase(381725981)]
+        [TestCase(-13)]
         public void IsEven_ShouldReturnTrue_WhenNumerIsEven(int number)
         {
             bool isEven = ParityService.IsEven(number);
@@ -46,6 +49,10 @@ namespace ParityUnitTest
 
         [TestCase(2)]
         [TestCase(4)]
+        [TestCase(6)]
+        [TestCase(875901452)]
+        [TestCase(-10)]
+        [TestCase(0)]
         public void IsEven_ShouldReturnFalse_WhenNumerIsPair(int number)
         {
             bool isEven = ParityService.IsEven(number);

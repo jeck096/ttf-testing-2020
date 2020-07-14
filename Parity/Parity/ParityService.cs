@@ -6,7 +6,7 @@ namespace Parity
     {
         public static bool IsEven(int v)
         {
-            return v%2 == 0 ? false : true;
+            return v%2 != 0 ;
             
 
         }
