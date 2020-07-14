@@ -68,5 +68,12 @@ namespace ParityUnitTest
         }
 
 
+        [Test]
+        public void IsOdd_ShouldReturnTrue_WhenNumerIsDivisibleByTwo()
+        {
+            bool isOdd = ParityService.IsOdd(2);
+            Assert.That(isOdd, Is.True);
+        }
+
     }
 }

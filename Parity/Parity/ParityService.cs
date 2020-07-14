@@ -4,16 +4,16 @@ namespace Parity
 {
     public class ParityService
     {
-        public static bool IsEven(int v)
+        public static bool IsEven(int number)
         {
-            return v%2 != 0 ;
+            return number%2 != 0 ;
             
 
         }
 
-        public static bool IsOdd(int v)
+        public static bool IsOdd(int number)
         {
-            return false;
+            return !IsEven(number);
 
         }
     }
