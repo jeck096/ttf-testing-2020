@@ -10,5 +10,11 @@ namespace Parity
             
 
         }
+
+        public static bool IsOdd(int v)
+        {
+            return false;
+
+        }
     }
 }
