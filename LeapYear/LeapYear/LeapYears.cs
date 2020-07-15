@@ -6,7 +6,7 @@ namespace LeapYear
     {
         public static bool IsLeapYear(int year) {
 
-            if (year % 4 == 0 && (year%100 !=0|| year % 400 == 0)) return true;
+            if (year % 4 == 0 && ((year>=1581&&(year%100 !=0|| year % 400 == 0)|| year <= 1581))) return true;
             return false;
         }
     }

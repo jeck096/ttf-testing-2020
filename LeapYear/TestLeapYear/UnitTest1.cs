@@ -27,7 +27,7 @@ namespace TestLeapYear
 
             Assert.That(isLeap, Is.True);
         }
-        [TestCase(100)]
+        [TestCase(1700)]
         public void IsLeapYear_ShouldReturnFalse_WhenYearIsSecolar(int number)
         {
             bool isLeap = LeapYears.IsLeapYear(number);
@@ -35,6 +35,7 @@ namespace TestLeapYear
             Assert.That(isLeap, Is.False);
         }
         [TestCase(400)]
+        [TestCase(100)]
         public void IsLeapYear_ShouldReturntrue_WhenYearIsSecolarFour(int number)
         {
             bool isLeap = LeapYears.IsLeapYear(number);
