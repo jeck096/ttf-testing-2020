@@ -20,6 +20,7 @@ namespace TestLeapYear
 
         [TestCase(4)]
         [TestCase(8)]
+        
         public void IsLeapYear_ShouldReturntrue_WhenYearIsNumber(int number)
         {
             bool isLeap = LeapYears.IsLeapYear(number);
@@ -32,6 +33,13 @@ namespace TestLeapYear
             bool isLeap = LeapYears.IsLeapYear(number);
 
             Assert.That(isLeap, Is.False);
+        }
+        [TestCase(400)]
+        public void IsLeapYear_ShouldReturntrue_WhenYearIsSecolarFour(int number)
+        {
+            bool isLeap = LeapYears.IsLeapYear(number);
+
+            Assert.That(isLeap, Is.True);
         }
         #region old
         //[Test]
