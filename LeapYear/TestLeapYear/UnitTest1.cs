@@ -42,6 +42,13 @@ namespace TestLeapYear
 
             Assert.That(isLeap, Is.True);
         }
+        [TestCase(-4)]
+        public void IsLeapYear_ShouldReturnFalse_WhenYearIsNegative(int number)
+        {
+            bool isLeap = LeapYears.IsLeapYear(number);
+
+            Assert.That(isLeap, Is.False);
+        }
         #region old
         //[Test]
         //public void IsLeapYear_ShouldReturnFalse_WhenYearIsOne()
