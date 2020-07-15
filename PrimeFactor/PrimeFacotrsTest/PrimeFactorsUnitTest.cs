@@ -36,6 +36,7 @@ namespace PrimeFacotrsTest
             Assert.That(primeFactor, Is.EqualTo(expectedFacotrs));
             Assert.Pass();
         }
+        [Test]
         public void NegativeNumber_shouldThrow_InvalidOperationExexcepition()
         {
             try
@@ -48,6 +49,12 @@ namespace PrimeFacotrsTest
             }
             Assert.Fail();
         }
+        [Test]
+        public void ZeroNumber_shouldThrow_InvalidOperationExexcepition()
+        {
+            Assert.That(()=>PrimeFactor.Calculate(0), Throws.InvalidOperationException);
+        }
+
         #region old
         //[Test]
         //public void Two_ShouldReturn_Two()

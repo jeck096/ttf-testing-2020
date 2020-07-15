@@ -7,7 +7,7 @@ namespace PrimeFactors
     {
         public static List<int> Calculate(int number)
         {
-            if (number < 0) throw new InvalidOperationException();
+            if (number <= 0) throw new InvalidOperationException();
             List<int> lists = new List<int>();
             for (int value = 2; number >= value; )
             {
