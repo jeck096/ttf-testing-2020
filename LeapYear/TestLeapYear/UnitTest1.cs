@@ -9,6 +9,10 @@ namespace TestLeapYear
         {
         }
 
+       
+
+
+
         [Test]
         public void IsLeapYear_ShouldReturnFalse_WhenYearIsOne()
         {
@@ -16,12 +20,25 @@ namespace TestLeapYear
 
             Assert.That(isLeap, Is.False);
         }
+        [Test]
+        public void IsLeapYear_ShouldReturnFalse_WhenYearIstwo()
+        {
+            bool isLeap = LeapYears.IsLeapYear(2);
 
+            Assert.That(isLeap, Is.False);
+        }
 
         [Test]
         public void IsLeapYear_ShouldReturntrue_WhenYearIsFour()
         {
             bool isLeap = LeapYears.IsLeapYear(4);
+
+            Assert.That(isLeap, Is.True);
+        }
+        [Test]
+        public void IsLeapYear_ShouldReturntrue_WhenYearIsEight()
+        {
+            bool isLeap = LeapYears.IsLeapYear(8);
 
             Assert.That(isLeap, Is.True);
         }
