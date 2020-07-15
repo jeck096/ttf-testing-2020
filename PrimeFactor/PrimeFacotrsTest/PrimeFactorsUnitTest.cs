@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using PrimeFactors;
 
@@ -18,29 +19,43 @@ namespace PrimeFacotrsTest
             Assert.That(primeFactor, Is.Empty);
             Assert.Pass();
         }
-        [Test]
-        public void Two_ShouldReturn_Two()
+        [TestCase(2,2)]
+        [TestCase(3, 3)]
+        [TestCase(4, 2,2)]
+        [TestCase(5, 5)]
+        public void PrimeFactor_ShouldReturn(int number, params int[] expectedFacotrs )
         {
-            List<int> primeFactor = PrimeFactor.Calculate(2);
-            List<int> expectedValue = new List<int>() { 2 };
-            Assert.That(primeFactor, Is.EqualTo(expectedValue));
+            List<int> primeFactor = PrimeFactor.Calculate(number);
+ 
+            Assert.That(primeFactor, Is.EqualTo(expectedFacotrs));
             Assert.Pass();
         }
-        [Test]
-        public void Two_ShouldReturn_Three()
-        {
-            List<int> primeFactor = PrimeFactor.Calculate(3);
-            List<int> expectedValue = new List<int>() { 3 };
-            Assert.That(primeFactor, Is.EqualTo(expectedValue));
-            Assert.Pass();
-        }
-        [Test]
-        public void Two_ShouldReturn_TwoFour()
-        {
-            List<int> primeFactor = PrimeFactor.Calculate(4);
-            List<int> expectedValue = new List<int>() { 2, 2 };
-            Assert.That(primeFactor, Is.EqualTo(expectedValue));
-            Assert.Pass();
-        }
+
+        #region old
+        //[Test]
+        //public void Two_ShouldReturn_Two()
+        //{
+        //    List<int> primeFactor = PrimeFactor.Calculate(2);
+        //    List<int> expectedValue = new List<int>() { 2 };
+        //    Assert.That(primeFactor, Is.EqualTo(expectedValue));
+        //    Assert.Pass();
+        //}
+        //[Test]
+        //public void Two_ShouldReturn_Three()
+        //{
+        //    List<int> primeFactor = PrimeFactor.Calculate(3);
+        //    List<int> expectedValue = new List<int>() { 3 };
+        //    Assert.That(primeFactor, Is.EqualTo(expectedValue));
+        //    Assert.Pass();
+        //}
+        //[Test]
+        //public void Two_ShouldReturn_TwoTwo()
+        //{
+        //    List<int> primeFactor = PrimeFactor.Calculate(4);
+        //    List<int> expectedValue = new List<int>() { 2, 2 };
+        //    Assert.That(primeFactor, Is.EqualTo(expectedValue));
+        //    Assert.Pass();
+        //}
+        #endregion
     }
 }
