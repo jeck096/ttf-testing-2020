@@ -19,7 +19,7 @@ namespace PrimeFacotrsTest
             Assert.Pass();
         }
         [Test]
-        public void Two_ShouldReturn_TwoFactors()
+        public void Two_ShouldReturn_Two()
         {
             List<int> primeFactor = PrimeFactor.Calculate(2);
             List<int> expectedValue = new List<int>() { 2 };
@@ -27,10 +27,18 @@ namespace PrimeFacotrsTest
             Assert.Pass();
         }
         [Test]
-        public void Two_ShouldReturn_ThreeFactors()
+        public void Two_ShouldReturn_Three()
         {
             List<int> primeFactor = PrimeFactor.Calculate(3);
             List<int> expectedValue = new List<int>() { 3 };
+            Assert.That(primeFactor, Is.EqualTo(expectedValue));
+            Assert.Pass();
+        }
+        [Test]
+        public void Two_ShouldReturn_TwoFour()
+        {
+            List<int> primeFactor = PrimeFactor.Calculate(4);
+            List<int> expectedValue = new List<int>() { 2, 2 };
             Assert.That(primeFactor, Is.EqualTo(expectedValue));
             Assert.Pass();
         }
