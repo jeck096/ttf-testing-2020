@@ -16,5 +16,14 @@ namespace TestLeapYear
 
             Assert.That(isLeap, Is.False);
         }
+
+
+        [Test]
+        public void IsLeapYear_ShouldReturntrue_WhenYearIsFour()
+        {
+            bool isLeap = LeapYears.IsLeapYear(4);
+
+            Assert.That(isLeap, Is.True);
+        }
     }
 }
