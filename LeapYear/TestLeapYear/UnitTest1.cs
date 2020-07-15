@@ -49,6 +49,13 @@ namespace TestLeapYear
 
             Assert.That(isLeap, Is.False);
         }
+        [Test]
+        public void IsLeapYear_ShouldThrowArgumentException_WhenYearIsZero()
+        {
+            
+
+            Assert.That(()=>LeapYears.IsLeapYear(0), Throws.ArgumentException);
+        }
         #region old
         //[Test]
         //public void IsLeapYear_ShouldReturnFalse_WhenYearIsOne()
