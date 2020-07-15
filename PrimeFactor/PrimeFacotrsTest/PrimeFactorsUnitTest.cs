@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
@@ -27,6 +28,7 @@ namespace PrimeFacotrsTest
         [TestCase(8, 2, 2, 2)]
         [TestCase(8, 2, 2, 2)]
         [TestCase(2*2*2*2*2*3*3*3*3*3*5*7*19, 2, 2, 2, 2, 2,3,3,3,3,3,5,7,19)]
+        
         public void PrimeFactor_ShouldReturn(int number, params int[] expectedFacotrs )
         {
             List<int> primeFactor = PrimeFactor.Calculate(number);
@@ -34,7 +36,18 @@ namespace PrimeFacotrsTest
             Assert.That(primeFactor, Is.EqualTo(expectedFacotrs));
             Assert.Pass();
         }
-
+        public void NegativeNumber_shouldThrow_InvalidOperationExexcepition()
+        {
+            try
+            {
+                List<int> primeFactor = PrimeFactor.Calculate(-1);
+            }
+            catch (InvalidOperationException)
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
+        }
         #region old
         //[Test]
         //public void Two_ShouldReturn_Two()
