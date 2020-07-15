@@ -12,10 +12,18 @@ namespace PrimeFacotrsTest
         }
 
         [Test]
-        public void One_ShouldReturn_NoPreimeFactors()
+        public void One_ShouldReturn_NoPrimeFactors()
         {
             List<int> primeFactor = PrimeFactor.Calculate(1);
             Assert.That(primeFactor, Is.Empty);
+            Assert.Pass();
+        }
+        [Test]
+        public void Two_ShouldReturn_TwoFactors()
+        {
+            List<int> primeFactor = PrimeFactor.Calculate(2);
+            List<int> expectedValue = new List<int>() { 2 };
+            Assert.That(primeFactor, Is.EqualTo(expectedValue));
             Assert.Pass();
         }
     }
