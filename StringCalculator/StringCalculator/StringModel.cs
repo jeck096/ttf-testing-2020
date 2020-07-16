@@ -8,7 +8,8 @@ namespace StringCalculator
         {
             int sum=0;
             if (input == "") return 0;
-            string[] split = input.Split(",".ToCharArray());
+            
+            string[] split = input.Split(new Char[] { ',', '\n' });
             foreach (var item in split)
             {
                 sum += int.Parse(item);

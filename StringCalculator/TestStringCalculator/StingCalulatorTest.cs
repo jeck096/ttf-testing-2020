@@ -26,12 +26,26 @@ namespace TestStringCalculator
             Assert.That(number, Is.EqualTo(risultato));
         }
         [TestCase("1,2",3)]
-        public void InsertStringNumbers_ReturnSumNumber(string input, int risultato)
+        public void InsertStringTwoNumbers_ReturnSumNumber(string input, int risultato)
         {
             int number = StringModel.Add(input);
            
             Assert.That(number, Is.EqualTo(risultato));
         }
+        [TestCase("1,2,5,6,7,8", 1+2+5+6+7+8)]
+        [TestCase("31651,26646541,54561,6548648,70000,438", 31651 + 26646541 + 54561 + 6548648 + 70000 + 438)]
+        public void InsertStringNumbers_ReturnSumNumbers(string input, int risultato)
+        {
+            int number = StringModel.Add(input);
 
+            Assert.That(number, Is.EqualTo(risultato));
+        }
+        [TestCase("1,2,5\n6,7,8", 1 + 2 + 5 + 6 + 7 + 8)]
+        public void InsertNewLineSeparator_ReturnSumNumbers(string input, int risultato)
+        {
+            int number = StringModel.Add(input);
+
+            Assert.That(number, Is.EqualTo(risultato));
+        }
     }
 }
