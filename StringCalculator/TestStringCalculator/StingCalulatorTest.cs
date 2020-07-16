@@ -47,5 +47,12 @@ namespace TestStringCalculator
 
             Assert.That(number, Is.EqualTo(risultato));
         }
+        [TestCase("//;\n1;2;5;6;7;8", 1 + 2 + 5 + 6 + 7 + 8)]
+        public void InsertCostumSeparator_ReturnSumNumbers(string input, int risultato)
+        {
+            int number = StringModel.Add(input);
+
+            Assert.That(number, Is.EqualTo(risultato));
+        }
     }
 }
