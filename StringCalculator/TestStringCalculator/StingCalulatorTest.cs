@@ -17,12 +17,21 @@ namespace TestStringCalculator
             Assert.That(number,Is.EqualTo(0));
         }
 
-        [TestCase("1")]
-        public void InsertStringNumber_ReturnNumber(string input)
+        [TestCase("1",1)]
+        [TestCase("50",50)]
+        public void InsertStringNumber_ReturnNumber(string input, int risultato)
         {
             int number = StringModel.Add(input);
-            int verifica = int.Parse(input);
-            Assert.That(number, Is.EqualTo(verifica));
+           
+            Assert.That(number, Is.EqualTo(risultato));
         }
+        [TestCase("1,2",3)]
+        public void InsertStringNumbers_ReturnSumNumber(string input, int risultato)
+        {
+            int number = StringModel.Add(input);
+           
+            Assert.That(number, Is.EqualTo(risultato));
+        }
+
     }
 }

@@ -6,8 +6,15 @@ namespace StringCalculator
     {
         public static int Add(string input)
         {
+            int sum=0;
             if (input == "") return 0;
-            return int.Parse(input);
+            string[] split = input.Split(",".ToCharArray());
+            foreach (var item in split)
+            {
+                sum += int.Parse(item);
+            }
+
+            return sum;
         }
     }
 }
